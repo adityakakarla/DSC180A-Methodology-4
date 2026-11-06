@@ -2,13 +2,15 @@
 * Course: Quantization in ML Models
 * Capstone Mentor: Arya Mazumdar (amazumdar@ucsd.edu)
 
+Our domain is on track to complete the Project 1 deliverables. One interesting project idea I have is a slightly modified KIVI quantization implementation where we maintain both recent tokens and the first tokens in a conversation in full capacity.
+
 **What is the most interesting topic covered in your domain this quarter?**
 
-The most interesting topic covered thus far has been the research supporting KIVI quantization. Understading the "why" behind KIVI requires us to understand the patterns observed in key and value caches. For instance, the KIVI paper discusses a pattern in found in key caches - outliers tend to be aggregated in a select subset of columns. On the other hand, value caches tend to have outliers everywhere. This insight guides the development behind KIVI and why the authors chose to quantize key caches using per-channel quantization rather than per-token quantization.
+The most interesting topic covered thus far has been the research supporting KIVI quantization. Understanding the "why" behind KIVI requires us to understand the patterns observed in key and value caches. For instance, the KIVI paper discusses a pattern in found in key caches - outliers tend to be aggregated in a select subset of columns. On the other hand, value caches tend to have outliers everywhere. This insight guides the development behind KIVI and why the authors chose to quantize key caches using per-channel quantization rather than per-token quantization.
 
 **Describe a possible investigation you would like to pursue for your Quarter 2 Project.**
 
-One possible investigation is looking into possible quantization methods for the value cache. The KV paper had discussed that the value cache has outliers often randomly distributed, but interestingly, while investigating our Quen model, we saw that this wasn't always the case. While there were definitely more random outliers compared to the key cache, there were still one or two channels that had extreme outlier values. That makes me wonder if per-token is the right quantization method for the value cache. Maybe there's possibly a better method that we should take a look at. I think that's something that would be quite interesting to pursue. 
+One possible investigation is looking into possible quantization methods for the value cache. The KIVI paper had discussed that the value cache has outliers often randomly distributed, but interestingly, while investigating our Qwen model, we saw that this wasn't always the case. While there were definitely more random outliers compared to the key cache, there were still one or two channels that had extreme outlier values. That makes me wonder if per-token is the right quantization method for the value cache. Maybe there's possibly a better method that we should take a look at. I think that's something that would be quite interesting to pursue. 
 
 **What is a potential change you'd make to the approach taken in your Quarter 1 Project?**
 
